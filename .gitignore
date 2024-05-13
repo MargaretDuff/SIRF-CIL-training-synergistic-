@@ -12,3 +12,6 @@
 *.gz
 
 __pycache__/
+
+test.ipynb
+deconvolution_soln.ipynb
