@@ -3,9 +3,9 @@ prior = alpha * fn.OperatorCompositionFunction(fn.SmoothMixedL21Norm(epsilon=1e-
 prior_d = alpha * fn.OperatorCompositionFunction(fn.SmoothMixedL21Norm(epsilon=1e-4), operator)
 
 maprl = MAPRL(initial_estimate=image_dict['OSEM'], data_fidelity=data_fidelity, prior=prior, 
-              step_size=0.1, relaxation_eta=0.01, max_iteration=100, update_objective_interval=10)
+              step_size=0.1, relaxation_eta=0.01, update_objective_interval=10)
 
-maprl.run(verbose=1)
+maprl.run(verbose=1, iterations=100)
 
 show2D([maprl.solution, image_dict['OSEM'], maprl.solution-image_dict['PET']],
          title = ['MAPRL image', 'OSEM image', 'difference to GT'], 
