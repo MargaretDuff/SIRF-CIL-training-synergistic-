@@ -13,7 +13,7 @@ normK = K.norm()
 sigma = 1./normK
 tau = 1./normK
 
-pdhg = alg.PDHG(f = f, g = g, operator = K, tau = 0.99*tau, sigma = 0.99*sigma, initial=image_dict['OSEM']
-,max_iteration = 500, update_objective_interval = 50, check_convergence=False)
+pdhg = alg.PDHG(f = f, g = g, operator = K, tau = 0.99*tau, sigma = 0.99*sigma, initial=image_dict['OSEM'], 
+                update_objective_interval = 50, check_convergence=False)
 
-pdhg.run(verbose=1)
+pdhg.run(verbose=1, iterations=500)
